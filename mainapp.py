@@ -59,8 +59,8 @@ def function_name_4():
 def function_name_5():
     pass
 
-<<<<<<< HEAD
+# <<<<<<< HEAD
 # print_object()
-=======
+# =======
 # print_object()
->>>>>>> f007f4928a697c3333da3b89d98e18e9770ec732
+# >>>>>>> f007f4928a697c3333da3b89d98e18e9770ec732

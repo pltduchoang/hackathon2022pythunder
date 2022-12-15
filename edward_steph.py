@@ -88,7 +88,7 @@ list_of_crime_count = []
 for item in community_list:
     crime_count = 0
     for object in yes:
-        if input == item.community:
+        if object.name == item.community:
             crime_count += item.crimecount
     list_of_crime_count.append(crime_count)
 
