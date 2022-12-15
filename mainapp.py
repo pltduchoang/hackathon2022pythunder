@@ -24,7 +24,7 @@ def main_menu():
     while True:
         print(f'Welcome to City of Calgary crime stat program')
         for i in range(len(list_of_function)):
-            print(f'{i}  -   {list_of_function[i]}')
+            print(f'{i}  -   {list_of_function_label[i]}')
         user_choice = inputRangeCheck(input('Enter your option'))
         if user_choice == 0:
             break
@@ -59,8 +59,6 @@ def function_name_4():
 def function_name_5():
     pass
 
-# <<<<<<< HEAD
-# print_object()
-# =======
-# print_object()
-# >>>>>>> f007f4928a697c3333da3b89d98e18e9770ec732
+
+main_menu()
+
