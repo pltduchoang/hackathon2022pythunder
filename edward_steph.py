@@ -30,8 +30,6 @@ def readFile():
             count.append(items[3])
         file.close()
 
-def mathThing():
-    count = {i:ciunt}
 
 if __name__ == "__main__":
     readFile()
