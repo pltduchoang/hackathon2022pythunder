@@ -20,5 +20,10 @@ class pythunder:
 
 
 
+class Community():
+     def __init__(self, community, crime, population):
+         self.community = community
+         self.crime = crime
+         self.population = population
 
-    
+        
