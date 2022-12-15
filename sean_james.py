@@ -30,12 +30,15 @@ def menu():
 
 def viewBySector(x):
     list_of_community = []
+    list_of_population =[]
     for object in grand_list:
         if object.sector == x and object.community not in list_of_community:
             list_of_community.append(object.community)
+            if object.residentpop == ' ':
+                list_of_population.append(0)
+            else:
+                list_of_population.append(object.residentpop)
     list_of_crime_count = []
-    
-    
     for community in list_of_community:
         crime_counter = 0
 
@@ -44,18 +47,24 @@ def viewBySector(x):
                 crime_counter += int(object.crimecount)
                 
         list_of_crime_count.append(crime_counter)
+        # crimeRatePercent(list_of_crime_count)
 
+    print(len(list_of_community))
+    print(len(list_of_population))
     
-    
-    
-    percentage = 0    
+    print(list_of_population)
+      
     for z in range(len(list_of_community)):
-        
-        # percentage = int(list_of_crime_count[z])/int(population_list[z]) 
-        print(f'{"Name of community":<25}{"Crime from 2017":<15}')
-        print(f'{list_of_community[z]:<25} {list_of_crime_count[z]:<15}')
+        percentage = 0
+        if list_of_population[z] == '0' or list_of_population[z] =="" or list_of_population[z] == 0:
+            percentage = 0
+        if list_of_population[z] != 0 and list_of_population[z] != "" and list_of_population[z] != '0':
+            percentage = (int(list_of_crime_count[z])/int(list_of_population[z])) * 100
+        print(f'{"Name of community":<25}{"Crime from 2017":<15}{"Percentage":10}')
+        print(f'{list_of_community[z]:<25} {list_of_crime_count[z]:<15} {percentage:10}%')
 
     
+
     while True:
         user_find = input("Enter specific community name: ").upper()
         if user_find != 0:
@@ -71,10 +80,9 @@ def viewBySector(x):
                     x += 1
                 
         if user_find == 0:
-
             break
     menu()        
-    
+
 # searchCommunity(
 print(list_of_sector)
 menu()
