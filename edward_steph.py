@@ -1,11 +1,8 @@
-print("TESTING AIWPJUODFHSIJ:FHUOHDSI2342rds")
-# Ratio of crime rate of population individually
 
 import class_of_anything as c
 import os
 
-# cwd = os.getcwd(r"c:\Users\emagt\OneDrive\Desktop\Hackathon\hackathon2022pythunder")  # Get the current working directory (cwd)
-# files = os.listdir(cwd)  # Get all the files in that directory
+
 object_list = []
 community = []
 count = []
@@ -30,8 +27,6 @@ def readFile():
             count.append(items[3])
         file.close()
 
-def mathThing():
-    count = {i:ciunt}
 
 if __name__ == "__main__":
     readFile()
