@@ -37,11 +37,17 @@ import os
 object_list_of_cases = []
 
 here = os.path.dirname(os.path.abspath(__file__))
-filename = os.path.join(here, "practice.txt")
+filename = os.path.join(here, "practice.csv")
 file_data = open(filename, "r")
 file_data.readline()
 for line in file_data:
-    line_data = line.lstrip().rstrip().split(' ')
+    line_data = line.lstrip().rstrip().split(',')
     object_list_of_cases.append(c.pythunder(line_data[1],line_data[2],line_data[3],line_data[4]))
 
+category_list = []
 
+for object in object_list_of_cases:
+    if object.cat not in category_list:
+        category_list.append(object.cat)
+
+print (category_list)
