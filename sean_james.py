@@ -1,19 +1,81 @@
 import class_pythunder as c
 import mainapp as m
 
+grand_list = m.object_list_of_data
 
-m.
-community_list = m.object_list
+list_of_sector = []
+for object in grand_list:
+    if object.sector not in list_of_sector:
+        list_of_sector.append(object.sector)
+del(list_of_sector[-1])
 
-# o_file = open("data.csv", "r")
 
-def searchCommunity():
-    print(community_list[0], community_list[1])
+def menu():
+    # list_of_sector = []
+    # for object in grand_list:
+    #     if object.sector not in list_of_sector:
+    #         list_of_sector.append(object.sector)
+    # del(list_of_sector[-1])
 
-def crimeCount():
-    pass
+    for i in range(len(list_of_sector)):
+        print(f'{i+1}  -  {list_of_sector[i]}') 
+    print('Enter 0 to back to main menu')
+    user_choice=input('Enter sector')
+    viewBySector(list_of_sector[int(user_choice)-1])
 
-def pop():
-    pass
+def viewBySector(x):
+    list_of_community = []
+    list_of_population =[]
+    for object in grand_list:
+        if object.sector == x and object.community not in list_of_community:
+            list_of_community.append(object.community)
+            if object.residentpop == ' ':
+                list_of_population.append(0)
+            else:
+                list_of_population.append(object.residentpop)
+    list_of_crime_count = []
+    for community in list_of_community:
+        crime_counter = 0
 
-searchCommunity()
+        for object in grand_list:
+            if object.community == community:
+                crime_counter += int(object.crimecount)
+                
+        list_of_crime_count.append(crime_counter)
+        # crimeRatePercent(list_of_crime_count)
+
+    print(len(list_of_community))
+    print(len(list_of_population))
+    
+    print(list_of_population)
+      
+    for z in range(len(list_of_community)):
+        percentage = 0
+        if list_of_population[z] == '0' or list_of_population[z] =="" or list_of_population[z] == 0:
+            percentage = 0
+        if list_of_population[z] != 0 and list_of_population[z] != "" and list_of_population[z] != '0':
+            percentage = (int(list_of_crime_count[z])/int(list_of_population[z])) * 100
+        print(f'{"Name of community":<25}{"Crime from 2017":<15}{"Percentage":10}')
+        print(f'{list_of_community[z]:<25} {list_of_crime_count[z]:<15} {round(percentage, 2):10}%')
+
+    
+
+    while True:
+        user_find = input("Enter specific community name: ").upper()
+        if user_find != 0:
+            x=0
+            while x in range (len(list_of_community)+1):
+                if x < len(list_of_community) and list_of_community[x] == user_find:
+                    print(f'{"Name of community: ":<25}{"Crime from 2017":<15}')
+                    print(f'{list_of_community[x]:<25} {list_of_crime_count[x]:<15}')
+                    break
+                if x == len(list_of_community):
+                    print('Communnity Name not found!')
+                else:
+                    x += 1
+                
+        if user_find == 0:
+            break
+    menu()        
+
+menu()

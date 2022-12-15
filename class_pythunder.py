@@ -25,5 +25,3 @@ class Community():
          self.community = community
          self.crime = crime
          self.population = population
-
-        

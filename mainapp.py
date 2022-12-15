@@ -11,7 +11,6 @@ file_data.readline()
 for line in file_data:
     line_data = line.lstrip().rstrip().split(',')
     object_list_of_data.append(c.pythunder(line_data[0],line_data[1],line_data[2],line_data[3],line_data[4],line_data[5],line_data[6]))
-    
 
 
 
