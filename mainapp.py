@@ -39,7 +39,7 @@ object_list_of_cases = []
 here = os.path.dirname(os.path.abspath(__file__))
 filename = os.path.join(here, "practice.csv")
 file_data = open(filename, "r")
-file_data.readline()
+file_data.readline() #skip the header
 for line in file_data:
     line_data = line.lstrip().rstrip().split(',')
     object_list_of_cases.append(c.pythunder(line_data[1],line_data[2],line_data[3],line_data[4]))

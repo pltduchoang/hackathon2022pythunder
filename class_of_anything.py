@@ -22,9 +22,6 @@ class pythunder:
         self.count = count
         self.population = population
 
-
-
-
     def __str__(self):
         result = f'{self.community}{self.cat}{self.count}{self.population}'
         return result
