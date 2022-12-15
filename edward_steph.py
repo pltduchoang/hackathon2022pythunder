@@ -9,6 +9,7 @@ community_list = []
 community = []
 count = []
 population = []
+sector_list = []
 x=[]
 yes=m.object_list_of_data
 
@@ -25,7 +26,10 @@ for objecct in yes:
 for object in yes:
     population.append(object.residentpop)
 
-input = input("Input community")
+for object in yes:
+    sector_list.append(object.sector)
+
+# input = input("Input community")
 def math():
     print(x)
     global input
@@ -84,17 +88,53 @@ def combine():
 #     combine()
 #     math()
 
+
 list_of_crime_count = []
 for item in community_list:
     crime_count = 0
     for object in yes:
-        if object.name == item.community:
-            crime_count += item.crimecount
+        if object.community == item:
+            crime_count += int(object.crimecount)
     list_of_crime_count.append(crime_count)
+    # print(crime_count)
+    # print(list_of_crime_count)
+
+print(community_list)
 
 list_of_crime_percentage=[]
 
+
 for z in range (len(community_list)):
-    print (community_list[x])
-    print (crime_count[x])
+    print (community_list[z])
+    print (list_of_crime_count[z])
+where = str(input("Enter Community Name(all CAPS): "))
+
+def check(where):
+    # where = str(input("Enter Community Name(all CAPS): "))
+    if where in community_list:
+        return True
+    else:
+        return False
+
+def oneCommunity():
+    # where = communityMenu():
+    filter_object = filter(check, where)
+
+def communityMenu():
+    where = str(input("Enter Community Name(all CAPS): "))
+
+
+
+def menu():
+    print("Enter Sector of Calgary (1- North, 2-  South, 3- East, 4- West, 5 - all)")
+    option = int(input("Enter Option"))
+    if option == 1:
+        communityMenu()
+    if option == 2:
+        communityMenu()
+    if option == 3:
+        communityMenu()
+    if option == 4:
+        communityMenu()
+
     
