@@ -33,14 +33,38 @@ def list_years():
     for object in object_list:
         if str(object.year) not in list_of_years:
             list_of_years.append(object.year)
-list_years()
+
 print(list_of_years)
 
-
 def year_menu():
-    menu_year = int(input("\nYear Menu\n0 - Return to Main Menu\n1 - 2017\n2 - 2018\n3 - 2019\n4 - 2020\n5 - 2021\n6 - 2022\nEnter option: "))
 
+    list_years()
+    menu_year = ''
+    while menu_year !=0:
+        #input option
+        menu_year = int(input("\nYear Menu\n0 - Return to Main Menu\n1 - 2017\n2 - 2018\n3 - 2019\n4 - 2020\n5 - 2021\n6 - 2022\nEnter option: "))
 
+        if menu_year == 0:
+            pass
 
+        elif menu_year == 1:
+            community_data_by_year()
+        
+        elif menu_year == 2:
+            pass
+
+        elif menu_year == 3:
+            pass
+
+        elif menu_year == 4:
+            pass
+
+        elif menu_year == 5:
+            pass
+
+        elif menu_year == 6:
+            pass
+
+        else: print("\nInvalid input. Please try again.")
 
 year_menu()
