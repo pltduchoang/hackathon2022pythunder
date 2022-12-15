@@ -51,3 +51,30 @@ for object in object_list_of_cases:
         category_list.append(object.cat)
 
 print (category_list)
+
+
+community_list = []
+
+for object in object_list_of_cases:
+    if object.community not in community_list:
+        community_list.append(object.community)
+
+crime_count_list = []
+
+for ech_community in community_list:
+    crime_count = 0
+    for object in object_list_of_cases:
+        if object.community == ech_community:
+            crime_count += int(object.count)
+    crime_count_list.append(crime_count)
+
+print(community_list)
+
+print(crime_count_list)
+
+for x in range (len(community_list)):
+    print (community_list[x])
+    print (crime_count_list[x])
+
+crime_count_list.sort()
+print(crime_count_list[-1])
