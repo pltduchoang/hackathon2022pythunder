@@ -18,15 +18,15 @@ def print_object():
 def function_name_1():
     pass
 
-def function_name_1():
+def function_name_2():
     pass
 
-def function_name_1():
+def function_name_3():
     pass
 
-def function_name_1():
+def function_name_4():
     pass
 
-def function_name_1():
+def function_name_5():
     pass
 
