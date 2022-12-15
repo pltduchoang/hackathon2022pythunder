@@ -1,4 +1,4 @@
-import class_of_anything as c
+import class_pythunder as c
 import os
 
 object_list = []
