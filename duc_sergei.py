@@ -24,21 +24,23 @@ object_list = m.object_list_of_data
 #     object_list.append(c.pythunder(line_data[0],line_data[1],line_data[2],line_data[3],line_data[4],line_data[5],line_data[6],line_data[8]))
 
 
+#append years to list
+
+
 
 list_of_years = []
-
-#count number of years
-def function_name_1():
+def list_years():
     for object in object_list:
-            # var1 = 0
-
-                
-            # if str(f'{object.year}').isdigit() == True:
-            #     var1 += 
         if str(object.year) not in list_of_years:
             list_of_years.append(object.year)
-
-
-
-function_name_1()
+list_years()
 print(list_of_years)
+
+
+def year_menu():
+    menu_year = int(input("\nYear Menu\n0 - Return to Main Menu\n1 - 2017\n2 - 2018\n3 - 2019\n4 - 2020\n5 - 2021\n6 - 2022\nEnter option: "))
+
+
+
+
+year_menu()
