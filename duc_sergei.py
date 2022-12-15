@@ -36,11 +36,14 @@ def list_years():
             list_of_years.sort()
 
 
+
 list_of_communities = []
 def list_community():
     for obj in object_list:
         if str(obj.community) not in list_of_communities:
             list_of_communities.append(obj.community)
+
+
 
 list_of_sectors = []
 def list_sector():
