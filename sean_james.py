@@ -2,13 +2,18 @@ import class_pythunder as c
 import mainapp as m
 
 
-m.
-community_list = m.object_list
-
-# o_file = open("data.csv", "r")
+grand_list = m.object_list_of_data
 
 def searchCommunity():
-    print(community_list[0], community_list[1])
+    comm_names = []
+    search = input("Enter Community: ")
+    j = 0
+    for k in grand_list:
+        com_sort = c.Community(grand_list[j].DATA1, grand_list[j].DATA3, grand_list[j].DATA4)
+        comm_names.append(com_sort)
+        j += 1   
+        if search == com_sort.community:
+            print(com_sort)
 
 def crimeCount():
     pass
@@ -16,4 +21,4 @@ def crimeCount():
 def pop():
     pass
 
-searchCommunity()
+# searchCommunity()
