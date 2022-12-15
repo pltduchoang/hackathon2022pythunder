@@ -10,7 +10,6 @@
 #         self.DATA7 = DATA7
 
 
-
 #     def __str__(self):
 #         result = f'{self.DATA0}{self.DATA1}{self.DATA2}{self.DATA3}{self.DATA4}{self.DATA5}{self.DATA6}{self.DATA7}'
 #         return result
